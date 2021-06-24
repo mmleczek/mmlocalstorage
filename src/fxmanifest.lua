@@ -1,5 +1,5 @@
 fx_version "bodacious"
-games { "gta5" }
+game "gta5"
 lua54 "yes"
 
 author "mmleczek (mmleczek.pl)"
