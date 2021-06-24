@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head></head>
+	<body></body>
+</html>
+
+<script type="text/javascript"> 
+	window.addEventListener('message', function (event) {
+		let item = event.data;
+		if (item.get) { 
+			let lsitem =  window.localStorage.getItem(item.value);
+			if(lsitem === null) {
+				PostReq("http://mmlocalstorage/get", {
+					id: item.id,
+					value: null
+				});
+			} else {
+				PostReq("http://mmlocalstorage/get", {
+					id: item.id,
+					value: JSON.parse(lsitem)
+				});
+			}
+		} else if (item.set) {
+			window.localStorage.setItem(item.key, item.value);
+		} else if (item.rem) {
+			window.localStorage.removeItem(item.key);
+		}
+	});
+
+	function PostReq(url, data) {
+		let xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.send(JSON.stringify(data));
+	}
+</script>
