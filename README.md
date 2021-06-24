@@ -5,7 +5,7 @@ FiveM resource, created for easy access to player's localstorage.
 Click [here](https://github.com/mmleczek/mmlocalstorage/releases) to go to the releases page and download it.
 
 # Examples
-Examples are available [here](https://github.com/mmleczek/mmlocalstorage/blob/master/Examples.md).
+Examples are available [here](https://github.com/mmleczek/mmlocalstorage/blob/master/EXAMPLES.md).
 
 # Copyright
 Copyright © mmleczek.pl 2021.
